@@ -1,6 +1,18 @@
-# CoViz
+# [CoViz](https://co-viz.herokuapp.com/)
 
-## CoViz (Corona Virus Visualisation ) is a Web Application written in Python.
+## CoViz (Corona Virus Visualisation ) is a Web Application that provides live Visual Analysis of Coronavirus data.
+
+**App Details:**
+
+### Language : PYTHON
+
+### FrameWork : STREAMLIT
+
+### Visualization : Plotly
+
+### Data Manipulation : Pandas
+
+### Deployed on : Heroku
 
 ### Tip: You can hover over any Graph, to see the details in detail.
 
@@ -14,7 +26,7 @@
 
 ### 4. PAST PATTERNS : You can analyse the patterns from the past data
 
-### 5. YOUR COUNTRY : You can select your Country & fnd a detailed analysis
+### 5. YOUR COUNTRY : You can select your Country & find a detailed analysis
 
 ### 6. MAP : A Geographical Map Visualisation to get the whole picture 
 
