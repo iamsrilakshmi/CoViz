@@ -68,6 +68,8 @@ def from_author():
 
 		### Feel free to connect with me on [Twitter](https://twitter.com/iamsrilakshmi) [Github](https://github.com/iamsrilakshmi)[Linkedin](https://www.linkedin.com/in/iamsrilakshmi) 
 
+		### Here is my [Website](https://sites.google.com/view/srilakshmi/)
+		
 		### Thank you for spending your precious time on this CoViz App. 
 
 
