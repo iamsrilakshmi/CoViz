@@ -2,7 +2,7 @@
 
 ## CoViz (Corona Virus Visualisation ) is a Web Application that provides live Visual Analysis of Coronavirus data.
 
-## APP DETAILS:
+## COVIZ APP DETAILS:
 
 ### Language : PYTHON
 
@@ -14,7 +14,9 @@
 
 ### Deployed on : HEROKU
 
-### APP GUIDE :
+### Dataset :  John Hopkins University Data
+
+### COVIZ APP GUIDE :
 
 ### Tip: You can hover over any Graph, to see the details in detail.
 
@@ -37,5 +39,15 @@
 ### I just hope that this unfortunate situation will end in the very near future.
 
 ### From the bottom of my heart, I would like to Thank the Intelligent Inventors & Developers of the Open Source Softwares & the supportive knowledge-sharing Open Source Community…!!!
+
+### I warmly welcome your feedbacks, suggestions & new feature requests.
+
+### Feel free to message me at : srilakshmiimhskalirs@gmail.com
+
+### I welcome opportunities to work & collabarate...
+
+### Feel free to connect with me on [Twitter](https://twitter.com/iamsrilakshmi) [Linkedin](https://www.linkedin.com/in/iamsrilakshmi) 
+
+### Here is my [Website](https://sites.google.com/view/srilakshmi/)
 
 ### Thank you for spending your precious time to read this...!!!
