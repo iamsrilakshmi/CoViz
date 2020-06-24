@@ -16,9 +16,9 @@ def from_author():
 
 		### From the bottom of my heart, I would like to Thank the Intelligent Inventors & Developers of the Open Source Softwares & the supportive knowledge-sharing Open Source Community…!!!
 		
-		## CoViz (Corona Virus Visualisation ) is a Python Web Application that provides live Visual Analysis of Coronavirus data from around the World.
+		### CoViz (Corona Virus Visualisation ) is a Python Web Application that provides live Visual Analysis of Coronavirus data from around the World.
 
-		## COVIZ APP DETAILS:
+		### COVIZ APP DETAILS:
 
 		### Language : PYTHON
 
@@ -56,7 +56,7 @@ def from_author():
 
 		### STAY SAFE ... STAY HEALTHY ... BELIEVE IN YOURSELF...
 		
-		## FINAL THOUGHTS : 
+		### FINAL THOUGHTS : 
 
 		### I hope you liked the CoViz App.
 
