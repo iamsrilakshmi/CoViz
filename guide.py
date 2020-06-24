@@ -66,7 +66,7 @@ def from_author():
 
 		### I welcome opportunities to work & collabarate...
 
-		### Feel free to connect with me on [Twitter](https://twitter.com/iamsrilakshmi) [Github](https://github.com/iamsrilakshmi)[Linkedin](https://www.linkedin.com/in/iamsrilakshmi) 
+		### Feel free to connect with me on [Twitter](https://twitter.com/iamsrilakshmi) [Github](https://github.com/iamsrilakshmi) [Linkedin](https://www.linkedin.com/in/iamsrilakshmi) 
 
 		### Here is my [Website](https://sites.google.com/view/srilakshmi/)
 		
