@@ -36,4 +36,6 @@
 
 ### I just hope that this unfortunate situation will end in the very near future.
 
-### >  From the bottom of my heart, I would like to Thank the Intelligent Inventors & Developers of the Open Source Softwares & the supportive knowledge-sharing Open Source Community…!!!
+### From the bottom of my heart, I would like to Thank the Intelligent Inventors & Developers of the Open Source Softwares & the supportive knowledge-sharing Open Source Community…!!!
+
+### Thank you for spending your precious time to read this...!!!
