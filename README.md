@@ -2,17 +2,17 @@
 
 ## CoViz (Corona Virus Visualisation ) is a Web Application that provides live Visual Analysis of Coronavirus data.
 
-**App Details:**
+## APP DETAILS:
 
 ### Language : PYTHON
 
 ### FrameWork : STREAMLIT
 
-### Visualization : Plotly
+### Visualization : PLOTLY
 
-### Data Manipulation : Pandas
+### Data Manipulation : PANDAS
 
-### Deployed on : Heroku
+### Deployed on : HEROKU
 
 ### Tip: You can hover over any Graph, to see the details in detail.
 
@@ -33,3 +33,5 @@
 ### I have deliberately not done prediction of the future cases using this data 
 
 ### I just hope that this unfortunate situation will end in the very near future.
+
+### >  From the bottom of my heart, I would like to Thank the Intelligent Inventors & Developers of the Open Source Softwares & the supportive knowledge-sharing Open Source Community…!!!
