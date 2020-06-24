@@ -14,6 +14,8 @@
 
 ### Deployed on : HEROKU
 
+### APP GUIDE :
+
 ### Tip: You can hover over any Graph, to see the details in detail.
 
 ### This App consists of 6 Main Sections:
