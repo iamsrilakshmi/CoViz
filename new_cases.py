@@ -32,4 +32,4 @@ def new_create(col, col_name,colorr,n):
 	new3[col_name] = new2.values
 	new3 = new3.sort_values(col_name).tail(n)	
 	fig = px.bar(new3, x=col_name, y='Country', orientation='h', text=col_name,color_discrete_sequence=[colorr],width=800,height=600)	
-	st.plotly_chart(fig)
+	st.plotly_chart(fig,use_container_width=True)
