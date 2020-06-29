@@ -46,7 +46,7 @@ def death_rate_n (rate_df,n,cz):
 	dr['Country'] = cz['Country/Region']
 	dr['Death Rate in Percentage'] = cz['Death Rate in Percentage']
 	dr = dr.reset_index()	
-	bld = pd.read_csv('blood.csv')
+	bld = pd.read_csv('https://raw.githubusercontent.com/iamsrilakshmi/CoViz/master/blood.csv')
 	b = bld.copy()	
 	b.set_index('Country', inplace=True)
 	b = b.apply(lambda x : x.str.strip(' %'))	
