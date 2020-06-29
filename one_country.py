@@ -62,7 +62,7 @@ def df_process(df,country_sel) :
 def show_graph2(df, n,cu):
 	past_graph = px.line(df[-n:], x='date',y=cu)
 	past_graph.update_traces(mode="markers+lines")
-	st.plotly_chart(past_graph)
+	st.plotly_chart(past_graph,use_container_width=True)
 
 
 def rate_of_growth(c5,country_sel,n,cu):
@@ -74,5 +74,5 @@ def rate_of_growth(c5,country_sel,n,cu):
 	one_co_T = one_co.T
 	one_co_T=one_co_T[2:]
 	one_co_T.columns=[cu]
-	st.bar_chart(one_co_T[-n:])
+	st.bar_chart(one_co_T[-n:],use_container_width=True)
 
