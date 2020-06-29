@@ -1,6 +1,8 @@
 import streamlit as st 
 import pandas as pd
 import today 
+import rates
+import bloodgroup
 import past
 import one_country
 import new_cases
@@ -10,7 +12,7 @@ import guide
 
 st.markdown("<h1 style='text-align: center; color: red;'>CoViz</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center; color: green;font-weight:bold;'>Corona Virus Visualization - 2020</h2>", unsafe_allow_html=True)
-menus = ['Current Updates','Top 10','New Cases', 'Past Patterns','Your Country','Map','Info']
+menus = ['Current Updates','Rates', 'Blood Group','Top 10','New Cases', 'Past Patterns','Your Country','Map','Info']
 st.sidebar.header('MENU')
 menu = st.sidebar.radio('View',menus)
 st.sidebar.subheader('Author')
@@ -18,7 +20,7 @@ st.sidebar.markdown("### [Sri Lakshmi](https://sites.google.com/view/srilakshmi)
 st.sidebar.info('Machine/ Deep Learning Researcher, Engineer')
 st.sidebar.markdown("#### [Contact Author](https://sites.google.com/view/srilakshmi/contact)")
 
-@st.cache
+@st.cache(show_spinner = False)
 def get_data():
 	confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv')
 	deaths = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
@@ -26,7 +28,7 @@ def get_data():
 	return confirmed, deaths, recovered
 confirmed, deaths, recovered = get_data()
 
-@st.cache
+@st.cache(show_spinner = False)
 def country_wise(confirmed, deaths, recovered):
 	c = pd.melt(confirmed, id_vars=confirmed.iloc[:, :4], var_name='date', value_name='confirmed')
 	d = pd.melt(deaths, id_vars=confirmed.iloc[:, :4], var_name='date', value_name='deaths')
@@ -46,7 +48,7 @@ def country_wise(confirmed, deaths, recovered):
 	return c 
 c = country_wise(confirmed, deaths, recovered)
 
-@st.cache
+@st.cache(show_spinner = False)
 def date_wise(confirmed, deaths, recovered):
 	c2 = pd.melt(confirmed, id_vars=confirmed.iloc[:, :4], var_name='date', value_name='confirmed')
 	d2 = pd.melt(deaths, id_vars=confirmed.iloc[:, :4], var_name='date', value_name='deaths')
@@ -64,6 +66,10 @@ c2 = date_wise(confirmed, deaths, recovered)
 
 if menu =='Current Updates':
 	today.current_updates(c)
+elif menu == 'Rates':
+	rates.rate_calc(confirmed, deaths, recovered)
+elif menu == 'Blood Group':
+	bloodgroup.bloodgroupanalysis(confirmed, deaths, recovered)	
 elif menu == 'Top 10':
 	percent.percent_pie(c)
 elif menu == 'Past Patterns':
