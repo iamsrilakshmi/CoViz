@@ -1,7 +1,7 @@
 import streamlit  as st 
 import pandas as pd 
 import plotly.express as px
-import seaborn as sns
+
 
 def rate_calc(confirmed, deaths, recovered):
 	cz = confirmed.copy()
