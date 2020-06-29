@@ -48,7 +48,7 @@ def map_plot(map_df, col,ta):
                     color=col, hover_name="Country", 
                     color_continuous_scale=px.colors.sequential.Rainbow, 
                     width=800,height=500,title = ta)
-	st.plotly_chart(fig)
+	st.plotly_chart(fig,use_container_width=True)
 
 def map_today(c5,fi,ctt):
 	c9= c5.copy()	
@@ -61,7 +61,7 @@ def map_today(c5,fi,ctt):
 	                     hover_name="Country", size=col,
 	                     projection="natural earth", width=850,height=500,size_max=60,
 	                     color_continuous_scale=px.colors.sequential.Rainbow, title = ctt)
-	st.plotly_chart(fig5)
+	st.plotly_chart(fig5,use_container_width=True)
 
 
 
