@@ -21,15 +21,15 @@ def past_patterns(c2):
 		st.subheader(f'Current/Active Cases in the past {n} days in the World ')
 		choose_days(c2,n, d,au)
 	st.subheader('Past Pattern of Confirmed Cases')
-	st.line_chart(c2.confirmed)
+	st.line_chart(c2.confirmed,use_container_width=True)
 	st.subheader('Past Pattern of Unfortunate Deaths')
-	st.line_chart(c2.deaths)
+	st.line_chart(c2.deaths,use_container_width=True)
 	st.subheader('Past Pattern of Recovered People')
-	st.line_chart(c2.recovered)
+	st.line_chart(c2.recovered,use_container_width=True)
 	st.subheader('Past Pattern of Active Cases')	
-	st.line_chart(c2.active)
+	st.line_chart(c2.active,use_container_width=True)
 
 
 def choose_days(c2,n, d,col):
 	past_data = px.line(c2[-n:], x=d, y=col)
-	st.plotly_chart(past_data)
+	st.plotly_chart(past_data,use_container_width=True)
