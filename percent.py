@@ -19,19 +19,19 @@ def percent_pie(c):
 	             title='Country Wise Percentage of Confirmed Cases',
 	             hover_data=['active'], height=600, width=850,color_discrete_sequence=px.colors.qualitative.G10)
 	fig.update_traces(textposition='inside', textinfo='percent+label')
-	st.plotly_chart(fig)
+	st.plotly_chart(fig,use_container_width=True)
 	fig2 = px.pie(high_to_low_recovered2[:10], values='deaths', names='Country',
 	             title='Country Wise Percentage of Unfortunate Deaths',
 	             hover_data=['recovered'], height=600, width=850,color_discrete_sequence=px.colors.qualitative.Plotly)
 	fig2.update_traces(textposition='inside', textinfo='percent+label')
-	st.plotly_chart(fig2)
+	st.plotly_chart(fig2,use_container_width=True)
 	fig3 = px.pie(high_to_low_deaths2[:10], values='recovered', names='Country',
 	             title='Country Wise Percentage of Recovered People',
 	             hover_data=['active'], height=600, width=850,color_discrete_sequence=px.colors.qualitative.G10)
 	fig3.update_traces(textposition='inside', textinfo='percent+label')
-	st.plotly_chart(fig3)
+	st.plotly_chart(fig3,use_container_width=True)
 	fig4 = px.pie(high_to_low_active3[:10], values='active', names='Country',
 	             title='Country Wise Percentage of Currently Active Cases',
 	             hover_data=['recovered'], height=600, width=850,color_discrete_sequence=px.colors.qualitative.Plotly)
 	fig4.update_traces(textposition='inside', textinfo='percent+label')
-	st.plotly_chart(fig4)
+	st.plotly_chart(fig4,use_container_width=True)
