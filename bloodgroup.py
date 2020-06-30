@@ -1,6 +1,7 @@
 import streamlit  as st 
 import pandas as pd 
 import plotly.express as px
+import seaborn as sns
 
 
 
@@ -23,7 +24,6 @@ def bloodgroupanalysis(confirmed, deaths, recovered):
 	cz = cz.reset_index()
 	n = st.slider('Select No of Days : ',3,90,10)
 	st.success(f'You have chosen to Plot Blood Group wise Death Rate of the past {n} days')
-	st.subheader(f'Blood Group wise Death Rates for the past {n} days')
 	death_rate_n(rate_df,n,cz)
 
 
@@ -56,9 +56,31 @@ def death_rate_n (rate_df,n,cz):
 	cols = blood_df.columns[1:-1]
 	cols = cols.tolist()	
 	for i in cols:
-		st.write('Death Rate in Percentage vs', i , 'Blood Group')
-		figg = px.scatter(blood_df, x=i, y='Death Rate in Percentage')
-		st.plotly_chart(figg , use_container_width=True )
+		blood_df[i] = blood_df[i].astype('float64')
+	blood_df['Death Rate in Percentage'] = blood_df['Death Rate in Percentage'].astype('float64')
+	for i in cols:
+		Pearson.append(blood_df[i].corr(blood_df['Death Rate in Percentage']))
+		Spearman.append(blood_df[i].corr(blood_df['Death Rate in Percentage'] , method = 'spearman'))
+		Kendall.append(blood_df[i].corr(blood_df['Death Rate in Percentage'] , method = 'kendall'))
+	corr_df = pd.DataFrame({
+		"Blood Group" : cols,
+		"Pearson's r" : Pearson,
+		"Spearman's rho" : Spearman,
+		"Kendall's tau" : Kendall
+		})
+	st.subheader('Correlation Coefficients of Death Rate vs Blood Group')
+	st.write(corr_df)
+	st.subheader(f'BLOOD GROUP WISE DEATH RATES for the past {n} days')
+	for i in cols:
+		st.subheader(f'Death Rate in Percentage vs {i} Blood Group')		
+		fig = sns.regplot(x = i, y ='Death Rate in Percentage', data = blood_df )
+		st.write(fig,use_container_width=True)
+		st.pyplot()
+	st.markdown('Reference : For more information , visit [here](https://www.healthline.com/health-news/does-your-blood-type-increase-your-risk-for-coronavirus)' )
+
+
+	
+		
 
 	
 	
