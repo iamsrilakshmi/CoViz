@@ -72,7 +72,7 @@ def from_author():
 		
 		### Thank you for spending your precious time on this CoViz App. 
 		
-		### For more information on Coronavirus / COVID 19, please visit (here)[https://www.who.int/health-topics/coronavirus#tab=tab_1]
+		### For more information on Coronavirus / COVID 19, please visit [here](https://www.who.int/health-topics/coronavirus#tab=tab_1)
 
 
 		''')
