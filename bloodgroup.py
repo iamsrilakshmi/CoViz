@@ -58,6 +58,9 @@ def death_rate_n (rate_df,n,cz):
 	for i in cols:
 		blood_df[i] = blood_df[i].astype('float64')
 	blood_df['Death Rate in Percentage'] = blood_df['Death Rate in Percentage'].astype('float64')
+	Pearson = []
+	Spearman = []
+	Kendall = []
 	for i in cols:
 		Pearson.append(blood_df[i].corr(blood_df['Death Rate in Percentage']))
 		Spearman.append(blood_df[i].corr(blood_df['Death Rate in Percentage'] , method = 'spearman'))
