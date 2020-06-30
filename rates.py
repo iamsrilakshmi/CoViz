@@ -4,6 +4,7 @@ import plotly.express as px
 
 
 def rate_calc(confirmed, deaths, recovered):
+	st.title('Recovery & Death Rates')
 	cz = confirmed.copy()
 	dz = deaths.copy()
 	rz = recovered.copy()
@@ -19,12 +20,14 @@ def rate_calc(confirmed, deaths, recovered):
 	rate_df['recovered_rate']= (rate_df['recovered'] / rate_df['confirmed']) * 100
 	cz = cz.groupby('Country/Region').sum()
 	cz = cz.reset_index()	
-	n = st.slider('Select No of Days : ',3,90,10)
-	st.success(f'You have chosen to Plot Rate of the past {n} days')
+	n = st.slider('Select No of Days : ',3,10,5)
+	st.success(f'You have chosen to Plot the Recovery Rate of the past {n} days')
 	st.subheader(f'Recovery Rates for the past {n} days')
 	recovery_rate_n(rate_df,n,cz)
-	st.subheader(f'Death Rates for the past {n} days')
-	death_rate_n(rate_df,n,cz)
+	q= st.slider('Select No of Days : ',3,50,5)
+	st.success(f'You have chosen to Plot the Death Rate of the past {q} days')
+	st.subheader(f'Death Rates for the past {q} days')
+	death_rate_n(rate_df,q,cz)
 
 
 def modify_df(cz):
@@ -44,14 +47,26 @@ def recovery_rate_n (rate_df,n,cz):
 	st.plotly_chart(fig,use_container_width=True)
 	
 
-def death_rate_n (rate_df,n,cz):
+def death_rate_n (rate_df,q,cz):
 	cz['dea'] = rate_df['deaths']	
-	m = n+1
+	m = q+1
 	cz['Death Rate in Percentage'] = (cz[cz.columns[-1]]/cz[cz.columns[-m]]) * 100	
 	cz = cz.sort_values(by='dea', ascending=False)
 	cz['Death Rate in Percentage'] = cz['Death Rate in Percentage'].apply(lambda x : '%.2f' %x)
 	fig2 = px.bar(cz[:20], x='Death Rate in Percentage', y='Country/Region', orientation='h', text='Death Rate in Percentage',color_discrete_sequence=['red'],width=800,height=600)	
-	st.plotly_chart(fig2,use_container_width=True)	
+	st.plotly_chart(fig2,use_container_width=True)
+	st.write('''
+		### INFO :
+
+		The following formulas have been used for the above Calculations.
+
+		Recovery Rate = Recovered / Confirmed Cases in the past X days
+
+		Death Rate = Deaths / Confirmed Cases in the past X days
+
+		The user can make custom selection of the number of Days (X) using the slider provided in this app.
+
+		''')
 	
 	
 
