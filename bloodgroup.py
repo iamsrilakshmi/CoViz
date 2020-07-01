@@ -75,8 +75,7 @@ def death_rate_n (rate_df,n,cz):
 		st.pyplot()
 	st.markdown('''### Reference :
 	For more information on how blood group determines the coronavirus death rates, 
-	do visit [here](https://www.healthline.com/health-news/does-your-blood-type-increase-your-risk-for-coronavirus)
-		    ''' )
+	do visit [here](https://www.healthline.com/health-news/does-your-blood-type-increase-your-risk-for-coronavirus)''' )
 
 
 	
