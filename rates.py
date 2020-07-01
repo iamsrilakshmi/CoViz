@@ -19,7 +19,19 @@ def rate_calc(confirmed, deaths, recovered):
 	rate_df['death_rate'] = (rate_df['deaths'] /rate_df['confirmed']) *100
 	rate_df['recovered_rate']= (rate_df['recovered'] / rate_df['confirmed']) * 100
 	cz = cz.groupby('Country/Region').sum()
-	cz = cz.reset_index()	
+	cz = cz.reset_index()
+	st.write('''
+		### INFO :
+
+		I have used the following formulas for calculations. 
+
+		Recovery Rate = Recovered / Confirmed Cases before the last X days
+
+		Death Rate = Deaths / Confirmed Cases before the last X days
+
+		You can make custom selection of the number of Days (X) using the slider below.
+
+		''')
 	n = st.slider('Select No of Days : ',3,10,5)
 	st.success(f'You have chosen to Plot the Recovery Rate of the past {n} days')
 	st.subheader(f'Recovery Rates for the past {n} days')
@@ -55,18 +67,7 @@ def death_rate_n (rate_df,q,cz):
 	cz['Death Rate in Percentage'] = cz['Death Rate in Percentage'].apply(lambda x : '%.2f' %x)
 	fig2 = px.bar(cz[:20], x='Death Rate in Percentage', y='Country/Region', orientation='h', text='Death Rate in Percentage',color_discrete_sequence=['red'],width=800,height=600)	
 	st.plotly_chart(fig2,use_container_width=True)
-	st.write('''
-		### INFO :
-
-		The following formulas have been used for the above Calculations.
-
-		Recovery Rate = Recovered / Confirmed Cases in the past X days
-
-		Death Rate = Deaths / Confirmed Cases in the past X days
-
-		The user can make custom selection of the number of Days (X) using the slider provided in this app.
-
-		''')
+	
 	
 	
 
