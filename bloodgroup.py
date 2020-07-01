@@ -70,7 +70,7 @@ def death_rate_n (rate_df,n,cz):
 	st.subheader(f'BLOOD GROUP WISE DEATH RATES for the past {n} days')
 	for i in cols:
 		st.subheader(f'Death Rate in Percentage vs {i} Blood Group')		
-		fig = sns.regplot(x = 'Death Rate in Percentage', y =i, data = blood_df )
+		fig = sns.regplot(x = i, y ='Death Rate in Percentage', data = blood_df )
 		st.write(fig,use_container_width=True)
 		st.pyplot()
 	st.markdown('### Reference :')
