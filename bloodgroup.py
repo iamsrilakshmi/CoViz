@@ -22,7 +22,7 @@ def bloodgroupanalysis(confirmed, deaths, recovered):
 	rate_df['recovered_rate']= (rate_df['recovered'] / rate_df['confirmed']) * 100
 	cz = cz.groupby('Country/Region').sum()
 	cz = cz.reset_index()
-	n = st.slider('Select No of Days : ',3,90,10)
+	n = st.slider('Select No of Days : ',3,15,10)
 	st.success(f'You have chosen to Plot Blood Group wise Death Rate of the past {n} days')
 	death_rate_n(rate_df,n,cz)
 
@@ -59,17 +59,11 @@ def death_rate_n (rate_df,n,cz):
 		blood_df[i] = blood_df[i].astype('float64')
 	blood_df['Death Rate in Percentage'] = blood_df['Death Rate in Percentage'].astype('float64')
 	Pearson = []
-	Spearman = []
-	Kendall = []
 	for i in cols:
 		Pearson.append(blood_df[i].corr(blood_df['Death Rate in Percentage']))
-		Spearman.append(blood_df[i].corr(blood_df['Death Rate in Percentage'] , method = 'spearman'))
-		Kendall.append(blood_df[i].corr(blood_df['Death Rate in Percentage'] , method = 'kendall'))
 	corr_df = pd.DataFrame({
 		"Blood Group" : cols,
-		"Pearson's r" : Pearson,
-		"Spearman's rho" : Spearman,
-		"Kendall's tau" : Kendall
+		"Pearson's r" : Pearson
 		})
 	st.subheader('Correlation Coefficients of Death Rate vs Blood Group')
 	st.write(corr_df)
