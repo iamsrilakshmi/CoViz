@@ -73,9 +73,8 @@ def death_rate_n (rate_df,n,cz):
 		fig = sns.regplot(x = i, y ='Death Rate in Percentage', data = blood_df )
 		st.write(fig,use_container_width=True)
 		st.pyplot()
-	st.markdown('''### Reference :
-	For more information on how blood group determines the coronavirus death rates, 
-	do visit [here](https://www.healthline.com/health-news/does-your-blood-type-increase-your-risk-for-coronavirus)''' )
+	st.markdown('### Reference :')
+	st.markdown('For more information on how blood group determines the coronavirus death rates, do visit [here](https://www.healthline.com/health-news/does-your-blood-type-increase-your-risk-for-coronavirus)' )
 
 
 	
